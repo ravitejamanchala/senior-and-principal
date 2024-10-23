@@ -8,7 +8,7 @@ interface ConflictStatusProps {
 const ConflictStatus: React.FC<ConflictStatusProps> = ({ absenceId }) => {
   // Fetch conflict data 
   const { data, loading, error } = useFetch(`https://front-end-kata.brighthr.workers.dev/api/conflict/${absenceId}`);
- console.log(data)
+   console.log(data)
   if (loading) {
     return <span>Loading...</span>;
   }

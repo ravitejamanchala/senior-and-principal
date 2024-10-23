@@ -15,7 +15,7 @@ describe('AbsenceList', () => {
       employee: { firstName: 'John', lastName: 'Doe' },
       absenceType: 'Sick Leave',
       startDate: '2023-10-01',
-      endDate: '2023-10-05',
+      days:3,
       approved: true,
 
     },
@@ -24,7 +24,7 @@ describe('AbsenceList', () => {
       employee: { firstName: 'Jane', lastName: 'Smith' },
       absenceType: 'Vacation',
       startDate: '2023-10-10',
-      endDate: '2023-10-15',
+      days:3,
       approved: false,
 
     },
