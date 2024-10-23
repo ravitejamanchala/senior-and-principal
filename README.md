@@ -1,52 +1,81 @@
-# React + TypeScript + Vite
+Here’s the corrected README content with proper formatting so that the commands remain intact on the same line.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Senior and Principal Tech Task
 
-Currently, two official plugins are available:
+This repository contains the implementation of the tech task assigned by BrightHR for a senior and principal frontend developer position. The application showcases a list of employee absences with features such as conflict detection and search functionality.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+- **React**: For building the user interface.
+- **TypeScript**: For type safety and improved development experience.
+- **Material UI**: For designing UI components.
+- **Tailwind CSS**: For additional styling and layout flexibility.
+- **Redux**: For managing application state.
+- **Axios**: For making API requests.
+- **Jest**: For unit testing.
+- **Custom Hooks**: For encapsulating reusable logic and handling component state.
+- **Debouncing**: For optimizing user input handling in search functionality.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- Displays a list of employee absences.
+- Fetches and indicates conflicts for each absence.
+- Search functionality to filter absences by employee name.
+- Responsive design for enhanced usability across devices.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Installation
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+To set up the project locally, follow these steps:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ravitejamanchala/senior-and-principal.git && cd senior-and-principal
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# senior-and-principal
-# senior-and-principal
+	2.	Install dependencies:
+
+npm install
+
+
+
+Running the Application
+
+	3.	Run the development server:
+
+npm run dev
+
+
+	4.	Run tests:
+
+npm test
+
+
+
+Usage
+
+After running the development server, open your browser and navigate to http://localhost:3000 to view the application. You can search for employee names and interact with the absence list.
+
+Contributing
+
+If you’d like to contribute to this project, feel free to submit a pull request or open an issue.
+
+License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgments
+
+	•	Thank you to BrightHR for the tech task opportunity.
+
+### Key Changes Made:
+- Combined the clone and change directory commands into a single line to avoid line breaks.
+  
+### Steps to Add the README to Your Repository
+
+1. **Create a new file** in your `senior-and-principal` repository named `README.md`.
+2. **Copy and paste** the above content into `README.md`.
+3. **Commit the changes** to your repository:
+   ```bash
+   git add README.md
+   git commit -m "Add README file with installation instructions"
+   git push origin main  # or the name of your branch
+
