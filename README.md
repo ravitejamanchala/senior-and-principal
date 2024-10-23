@@ -29,21 +29,14 @@ To set up the project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ravitejamanchala/senior-and-principal.git && cd senior-and-principal
+   git clone https://github.com/ravitejamanchala/senior-and-principal.git 
 
-2.	Install dependencies:
- ```bash
+2. Install dependencies:
+   ```bash
     npm install
-
-3.	Run the development server:
-    ```bash
+2. Run the development server:
+   ```bash
     npm run dev
-
-4.	Run tests:
-    ```bash 
-    npm test
-
-
-
-
-
+2. Run unit tests:
+   ```bash 
+   npm test
