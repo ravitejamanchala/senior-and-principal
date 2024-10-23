@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import AbsenceList from './AbsenceList';
 import useFetch from '../customHooks/useFetch'; 
+import axios from 'axios';
 
 jest.mock('../customHooks/useFetch', () => ({
   __esModule: true,
@@ -82,6 +83,37 @@ describe('AbsenceList', () => {
     
     await waitFor(() => {
       expect(screen.getByText('No Records')).toBeInTheDocument();
+    });
+  });
+  test('renders approved status correctly', async () => {
+    (useFetch as jest.Mock).mockReturnValue({
+      data: mockData,
+      loading: false,
+      error: null,
+    });
+  
+    render(<AbsenceList />);
+  
+    await waitFor(() => {
+      expect(screen.getByText('Approved')).toBeInTheDocument(); 
+      expect(screen.queryByText('Not Approved')).not.toBeInTheDocument(); 
+    });
+  });
+  test('searches by employee name', async () => {
+    (useFetch as jest.Mock).mockReturnValue({
+      data: mockData,
+      loading: false,
+      error: null,
+    });
+
+    render(<AbsenceList />);
+
+    const searchInput = screen.getByLabelText(/Search by Employee Name/i);
+    fireEvent.change(searchInput, { target: { value: 'Jane' } });
+
+    await waitFor(() => {
+      expect(screen.getByText('Jane Smith')).toBeInTheDocument();
+      expect(screen.queryByText('John Doe')).not.toBeInTheDocument();
     });
   });
 
