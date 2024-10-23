@@ -21,7 +21,6 @@ This repository contains the implementation of the tech task assigned by BrightH
 - Displays a list of employee absences.
 - Fetches and indicates conflicts for each absence.
 - Search functionality to filter absences by employee name.
-- Responsive design for enhanced usability across devices.
 
 ## Installation
 
