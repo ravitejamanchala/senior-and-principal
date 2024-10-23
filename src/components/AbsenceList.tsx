@@ -37,24 +37,24 @@ const AbsenceList: React.FC = () => {
     if (data) {
       // Fetch conflict data for each absence 
 
-      // const fetchConflicts = async () => {
-      //   try {
-      //     const conflictsResponses = await Promise.all(
-      //       data.map(async (absence: Absence) => {
-      //         try {
-      //           const response = await axios.get(`https://front-end-kata.brighthr.workers.dev/api/conflict/${absence.id}`);
-      //           return { id: absence.id, hasConflict: response.data?.conflicts };
-      //         } catch (error) {
-      //           console.error(`Error fetching conflict for absence ID ${absence.id}:`, error);
-      //           return { id: absence.id, hasConflict: false }; // Assuming no conflict if an error occurs
-      //         }
-      //       })
-      //     );
-      //     setConflictsData(conflictsResponses);
-      //   } catch (error) {
-      //     console.error('Error fetching conflicts:', error);
-      //   }
-      // };
+      const fetchConflicts = async () => {
+        try {
+          const conflictsResponses = await Promise.all(
+            data.map(async (absence: Absence) => {
+              try {
+                const response = await axios.get(`https://front-end-kata.brighthr.workers.dev/api/conflict/${absence.id}`);
+                return { id: absence.id, hasConflict: response.data?.conflicts };
+              } catch (error) {
+                console.error(`Error fetching conflict for absence ID ${absence.id}:`, error);
+                return { id: absence.id, hasConflict: false }; // Assuming no conflict if an error occurs
+              }
+            })
+          );
+          setConflictsData(conflictsResponses);
+        } catch (error) {
+          console.error('Error fetching conflicts:', error);
+        }
+      };
 
       fetchConflicts();
     }
@@ -218,7 +218,8 @@ const AbsenceList: React.FC = () => {
               </TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+        
+          <TableBody> 
             {paginatedData.map(absence => {
               const conflict = conflictsData.find(conf => conf.id === absence.id);
               return (
@@ -247,6 +248,7 @@ const AbsenceList: React.FC = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      {!paginatedData.length && <div className='text-center w-full text-lg m-3'>No Records</div>}
       <TablePagination
         rowsPerPageOptions={[10]}
         component="div"

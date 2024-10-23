@@ -71,5 +71,18 @@ describe('AbsenceList', () => {
       expect(screen.getByText('Vacation')).toBeInTheDocument();
     });
   });
+  test('renders NO data', async () => {
+    (useFetch as jest.Mock).mockReturnValue({
+      data: null,
+      loading: false,
+      error: null,
+    });
+
+    render(<AbsenceList />);
+    
+    await waitFor(() => {
+      expect(screen.getByText('No Records')).toBeInTheDocument();
+    });
+  });
 
 });
