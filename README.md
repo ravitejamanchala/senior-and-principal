@@ -31,51 +31,19 @@ To set up the project locally, follow these steps:
    ```bash
    git clone https://github.com/ravitejamanchala/senior-and-principal.git && cd senior-and-principal
 
-	2.	Install dependencies:
+2.	Install dependencies:
+ ```bash
+    npm install
 
-npm install
+3.	Run the development server:
+    ```bash
+    npm run dev
 
-
-
-Running the Application
-
-	3.	Run the development server:
-
-npm run dev
-
-
-	4.	Run tests:
-
-npm test
+4.	Run tests:
+    ```bash 
+    npm test
 
 
 
-Usage
 
-After running the development server, open your browser and navigate to http://localhost:3000 to view the application. You can search for employee names and interact with the absence list.
-
-Contributing
-
-If you’d like to contribute to this project, feel free to submit a pull request or open an issue.
-
-License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Acknowledgments
-
-	•	Thank you to BrightHR for the tech task opportunity.
-
-### Key Changes Made:
-- Combined the clone and change directory commands into a single line to avoid line breaks.
-  
-### Steps to Add the README to Your Repository
-
-1. **Create a new file** in your `senior-and-principal` repository named `README.md`.
-2. **Copy and paste** the above content into `README.md`.
-3. **Commit the changes** to your repository:
-   ```bash
-   git add README.md
-   git commit -m "Add README file with installation instructions"
-   git push origin main  # or the name of your branch
 
