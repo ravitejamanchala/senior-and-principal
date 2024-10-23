@@ -23,7 +23,7 @@ interface Absence {
 }
 
 const AbsenceList: React.FC = () => {
-  const { data, loading, error } = useFetch<Absence[]>('https://front-end-kata.brighthr.workers.dev/api/absences');
+  const { data, loading, error } = useFetch<Absence[]>('https://front-end-kata.brighthr.workers.dev/api/absences');// useFetch custom hook
   const [selectedEmployee, setSelectedEmployee] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortedData, setSortedData] = useState<Absence[]>([]);
@@ -37,15 +37,24 @@ const AbsenceList: React.FC = () => {
     if (data) {
       // Fetch conflict data for each absence 
 
-      const fetchConflicts = async () => {
-        const conflictsResponses = await Promise.all(
-          data.map(async (absence: Absence) => {
-            const response = await axios.get(`https://front-end-kata.brighthr.workers.dev/api/conflict/${absence.id}`);
-            return { id: absence.id, hasConflict: response.data.conflicts };
-          })
-        );
-        setConflictsData(conflictsResponses);
-      };
+      // const fetchConflicts = async () => {
+      //   try {
+      //     const conflictsResponses = await Promise.all(
+      //       data.map(async (absence: Absence) => {
+      //         try {
+      //           const response = await axios.get(`https://front-end-kata.brighthr.workers.dev/api/conflict/${absence.id}`);
+      //           return { id: absence.id, hasConflict: response.data?.conflicts };
+      //         } catch (error) {
+      //           console.error(`Error fetching conflict for absence ID ${absence.id}:`, error);
+      //           return { id: absence.id, hasConflict: false }; // Assuming no conflict if an error occurs
+      //         }
+      //       })
+      //     );
+      //     setConflictsData(conflictsResponses);
+      //   } catch (error) {
+      //     console.error('Error fetching conflicts:', error);
+      //   }
+      // };
 
       fetchConflicts();
     }
