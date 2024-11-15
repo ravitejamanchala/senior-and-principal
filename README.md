@@ -33,8 +33,10 @@ To set up the project locally, follow these steps:
 2. Install dependencies:
    ```bash
     npm install
-2. Run the development server:
+2. Run the development server:  
    ```bash
+
+   
     npm run dev
 2. Run unit tests:
    ```bash 
